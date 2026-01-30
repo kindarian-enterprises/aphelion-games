@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "name": "APHELION",
+    "version": "1.0.0",
+    "description": "Gaming Hub"
+  },
+  "categories": [
+    { "id": "action", "label": "Action" },
+    { "id": "arcade", "label": "Arcade" },
+    { "id": "puzzle", "label": "Puzzle" },
+    { "id": "racing", "label": "Racing" },
+    { "id": "shooter", "label": "Shooter" },
+    { "id": "sports", "label": "Sports" },
+    { "id": "strategy", "label": "Strategy" }
+  ],
+  "games": [
+    { "id": "1v1lol", "title": "1v1.LOL", "category": "shooter", "url": "https://1v1.lol/", "thumb": "https://images.crazygames.com/games/1v1-lol/cover-1669719824191.png" },
+    { "id": "krunker", "title": "Krunker.io", "category": "shooter", "url": "https://krunker.io/", "thumb": "https://images.crazygames.com/krunker-io_16x9/20240820092626/krunker-io_16x9-cover?auto=format%2Ccompress&q=65&cs=strip&ch=DPR&fit=crop&w=1200" },
+    { "id": "shellshock", "title": "Shell Shockers", "category": "shooter", "url": "https://shellshock.io/", "thumb": "https://images.crazygames.com/shell-shockers/20230601073234/shell-shockers-cover?auto=format,compress&q=75&cs=strip&fit=crop&w=600" },
+    { "id": "zombsroyale", "title": "Zombs Royale", "category": "shooter", "url": "https://zombsroyale.io/", "thumb": "https://images.crazygames.com/zombsroyale-io/20200617141915/zombsroyale-io-cover?fit=crop&w=600" },
+    { "id": "bulletforce", "title": "Bullet Force", "category": "shooter", "url": "https://poki.com/en/g/bullet-force", "thumb": "https://images.crazygames.com/bullet-force/20201127085448/bullet-force-cover?fit=crop&w=600" },
+    { "id": "warbrokers", "title": "War Brokers", "category": "shooter", "url": "https://warbrokers.io/", "thumb": "https://images.crazygames.com/war-brokers-io/20200413161940/war-brokers-io-cover?fit=crop&w=600" },
+
+    { "id": "subwaysurfers", "title": "Subway Surfers", "category": "arcade", "url": "https://poki.com/en/g/subway-surfers", "thumb": "https://images.crazygames.com/subway-surfers/20220629093645/subway-surfers-cover?fit=crop&w=600" },
+    { "id": "templerun2", "title": "Temple Run 2", "category": "arcade", "url": "https://poki.com/en/g/temple-run-2", "thumb": "https://images.crazygames.com/temple-run-2/20220421094108/temple-run-2-cover?fit=crop&w=600" },
+    { "id": "crossyroad", "title": "Crossy Road", "category": "arcade", "url": "https://poki.com/en/g/crossy-road", "thumb": "https://images.crazygames.com/crossy-road/20220308090119/crossy-road-cover?fit=crop&w=600" },
+    { "id": "geometrydash", "title": "Geometry Dash", "category": "arcade", "url": "https://geometrydashfull.io/", "thumb": "https://images.crazygames.com/geometry-dash-lite/20200327141609/geometry-dash-lite-cover?fit=crop&w=600" },
+    { "id": "doodlejump", "title": "Doodle Jump", "category": "arcade", "url": "https://poki.com/en/g/doodle-jump", "thumb": "https://images.crazygames.com/doodle-jump/20220308074612/doodle-jump-cover?fit=crop&w=600" },
+    { "id": "fruitninja", "title": "Fruit Ninja", "category": "arcade", "url": "https://poki.com/en/g/fruit-ninja", "thumb": "https://images.crazygames.com/fruit-ninja/20220308082802/fruit-ninja-cover?fit=crop&w=600" },
+
+    { "id": "2048", "title": "2048", "category": "puzzle", "url": "https://play2048.co/", "thumb": "https://images.crazygames.com/2048/cover-1593177908849.png" },
+    { "id": "cuttherope", "title": "Cut the Rope", "category": "puzzle", "url": "https://poki.com/en/g/cut-the-rope", "thumb": "https://images.crazygames.com/cut-the-rope/20221013094356/cut-the-rope-cover?fit=crop&w=600" },
+    { "id": "tetris", "title": "Tetris", "category": "puzzle", "url": "https://tetris.com/play-tetris", "thumb": "https://images.crazygames.com/games/classic-tetris/cover_16x9-1696591082779.png?auto=format&w=1200" },
+    { "id": "wordle", "title": "Wordle", "category": "puzzle", "url": "https://www.nytimes.com/games/wordle/index.html", "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wordle_196_example.svg/800px-Wordle_196_example.svg.png" },
+
+    { "id": "motox3m", "title": "Moto X3M", "category": "racing", "url": "https://poki.com/en/g/moto-x3m", "thumb": "https://images.crazygames.com/moto-x3m/20200210093015/moto-x3m-cover?fit=crop&w=600" },
+    { "id": "drifthunters", "title": "Drift Hunters", "category": "racing", "url": "https://poki.com/en/g/drift-hunters", "thumb": "https://images.crazygames.com/drift-hunters/20200218105124/drift-hunters-cover?fit=crop&w=600" },
+    { "id": "citycarstunt", "title": "City Car Stunt 4", "category": "racing", "url": "https://poki.com/en/g/city-car-stunt-4", "thumb": "https://images.crazygames.com/city-car-stunt-4/20201030121927/city-car-stunt-4-cover?fit=crop&w=600" },
+    { "id": "smashkarts", "title": "Smash Karts", "category": "racing", "url": "https://smashkarts.io/", "thumb": "https://images.crazygames.com/smash-karts/20220429125917/smash-karts-cover?fit=crop&w=600" },
+
+    { "id": "slope", "title": "Slope", "category": "action", "url": "https://poki.com/en/g/slope", "thumb": "https://images.crazygames.com/slope/20200518141131/slope-cover?fit=crop&w=600" },
+    { "id": "happywheels", "title": "Happy Wheels", "category": "action", "url": "https://happywheels.io/", "thumb": "https://images.crazygames.com/happy-wheels/20220729092942/happy-wheels-cover?fit=crop&w=600" },
+    { "id": "vex5", "title": "Vex 5", "category": "action", "url": "https://poki.com/en/g/vex-5", "thumb": "https://images.crazygames.com/vex-5/20211208083102/vex-5-cover?fit=crop&w=600" },
+    { "id": "run3", "title": "Run 3", "category": "action", "url": "https://poki.com/en/g/run-3", "thumb": "https://images.crazygames.com/run-3/20210428085155/run-3-cover?fit=crop&w=600" },
+
+    { "id": "basketballstars", "title": "Basketball Stars", "category": "sports", "url": "https://poki.com/en/g/basketball-stars", "thumb": "https://images.crazygames.com/basketball-stars/20200312091626/basketball-stars-cover?fit=crop&w=600" },
+    { "id": "footballlegends", "title": "Football Legends", "category": "sports", "url": "https://poki.com/en/g/football-legends-2021", "thumb": "https://images.crazygames.com/football-legends-2021/20210303091903/football-legends-2021-cover?fit=crop&w=600" },
+    { "id": "8ballpool", "title": "8 Ball Pool", "category": "sports", "url": "https://poki.com/en/g/8-ball-billiards-classic", "thumb": "https://images.crazygames.com/8-ball-billiards-classic/20210608085509/8-ball-billiards-classic-cover?fit=crop&w=600" },
+    { "id": "boxingrandom", "title": "Boxing Random", "category": "sports", "url": "https://poki.com/en/g/boxing-random", "thumb": "https://images.crazygames.com/boxing-random/20201217084809/boxing-random-cover?fit=crop&w=600" },
+
+    { "id": "chess", "title": "Chess", "category": "strategy", "url": "https://www.chess.com/play/online", "thumb": "https://images.crazygames.com/games/chess-classic/cover-1632390645508.png" },
+    { "id": "bloonstd", "title": "Bloons TD", "category": "strategy", "url": "https://poki.com/en/g/bloons-tower-defense", "thumb": "https://images.crazygames.com/bloons-tower-defense/20200413161820/bloons-tower-defense-cover?fit=crop&w=600" },
+    { "id": "ageofwar", "title": "Age of War", "category": "strategy", "url": "https://poki.com/en/g/age-of-war", "thumb": "https://images.crazygames.com/age-of-war/20200414144217/age-of-war-cover?fit=crop&w=600" },
+    { "id": "kingdomrush", "title": "Kingdom Rush", "category": "strategy", "url": "https://poki.com/en/g/kingdom-rush", "thumb": "https://images.crazygames.com/kingdom-rush/20200930145449/kingdom-rush-cover?fit=crop&w=600" }
+  ]
+}
