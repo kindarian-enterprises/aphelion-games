@@ -14,6 +14,10 @@
     { "id": "strategy", "label": "Strategy" }
   ],
   "games": [
-    { "id": "geometrygame", "title": "Geometry Game", "category": "arcade", "url": "https://www.crazygames.com/game/geometry-dash-online", "thumb": "https://www.google.com/imgres?q=geometry%20dash%20lite%20online&imgurl=https%3A%2F%2Fplay-lh.googleusercontent.com%2Fp7kWbWBFxQIrzolEqiV5uSvctLeyssZvBV7UBOX29wzZI52IdcSs4qCB_zsQJL1mt9A&imgrefurl=https%3A%2F%2Fplay.google.com%2Fpc-store%2Fgames%2Fdetails%3Fid%3Dcom.robtopx.geometryjumplite&docid=6XyrkDTCZT0SEM&tbnid=QbrJNII-MzY4hM&vet=12ahUKEwjyhoSOvLSSAxX34skDHUfTO1UQM3oECBgQAA..i&w=512&h=512&hcb=2&ved=2ahUKEwjyhoSOvLSSAxX34skDHUfTO1UQM3oECBgQAA" }
+    {"id": "geometrygame", "title": "Geometry Game", "category": "arcade", "url": "https://scratch.mit.edu/projects/536483250/", "thumb": "https://i.imgur.com/F2FLQYM.png" },
+    {"id": "buckshotroullete", "title": "Bucksot Roullete", "category": "Strategy", "url": "https://www.gamesflare.org/games/indie/2025-2/buckshot-roulette/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co85h5.webp"},
+    {"id": "tetris", "title": "Tetris", "category": "Puzzle", "url": "https://ytiurin.github.io/tetris/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4hxx.webp"},
+    {"id": "wordle", "title": "Wordle", "category": "Puzzle", "url": "https://www.nytimes.com/games/wordle/index.html", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/coarm8.webp"},
+    {"id": "wordleunlimited", "category": "Puzzle", "url": "https://wordleunlimited.org/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8xll.webp"}
   ]
 }
