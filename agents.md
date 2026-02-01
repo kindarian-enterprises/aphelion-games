@@ -9,11 +9,11 @@ APHELION is a static gaming portal. Config-driven, single-file output, zero runt
 ## Architecture
 
 ```
-config/games.json  →  scripts/build.sh  →  dist/index.html
+config/games.json  →  scripts/build.py  →  dist/index.html
 src/*.{html,css,js} ↗
 ```
 
-The build injects `games.json` as a JS object and inlines all assets into one HTML file.
+Single build engine: `scripts/build.py` (Python 3, no deps). Wrappers: `build.sh` (Linux/macOS), `build.cmd` (Windows), Makefile. Same behavior on all platforms.
 
 ## Key Files
 
@@ -23,7 +23,10 @@ The build injects `games.json` as a JS object and inlines all assets into one HT
 | `src/styles.css` | All styles. Uses CSS custom properties. |
 | `src/app.js` | All logic. IIFE, vanilla JS, no deps. |
 | `src/index.html` | Template with `__STYLES__` and `__SCRIPT__` placeholders. |
-| `scripts/build.sh` | Build script. Bash, uses sed for injection. |
+| `scripts/build.py` | **Build engine** (cross-platform). Reused by Makefile, build.sh, build.cmd. |
+| `scripts/build.sh` | Thin wrapper: runs build.py (Linux/macOS). |
+| `scripts/build.cmd` | Thin wrapper: runs build.py (Windows). |
+| `scripts/dev.cmd` | Build then serve on :8085 (Windows; equivalent of `make dev`). |
 
 ## Common Tasks
 
@@ -31,7 +34,7 @@ The build injects `games.json` as a JS object and inlines all assets into one HT
 
 1. Edit `config/games.json`, add entry to `games` array
 2. Ensure category exists in `categories` array
-3. Run `make build`
+3. Build: `make build` (Linux/macOS) or `python scripts\build.py` / `scripts\build.cmd` (Windows)
 
 ### Add a category
 
@@ -55,29 +58,30 @@ The build injects `games.json` as a JS object and inlines all assets into one HT
 - **JS**: Vanilla ES6+, IIFE pattern, no modules (single file output)
 - **Config**: JSON, no comments, keep it flat
 
-## Build System
+## Build System (cross-platform)
 
-Makefile targets:
-- `make build` - Build `dist/index.html`
-- `make clean` - Remove `dist/`
-- `make dev` - Build + serve on `:8085`
+**Single engine:** `scripts/build.py` (Python 3 stdlib only). Reused by all entry points.
 
-The build script is pure bash. It uses:
-- `cat` to read files
-- `sed` for placeholder replacement
-- No external tools required beyond coreutils
+| Platform | Build | Clean | Dev server |
+|----------|--------|--------|------------|
+| Linux/macOS | `make build` or `./scripts/build.sh` or `python3 scripts/build.py` | `make clean` or `rm -rf dist` | `make dev` or build then `cd dist && python3 -m http.server 8085` |
+| Windows | `python scripts\build.py` or `scripts\build.cmd` | `rmdir /s /q dist` | `scripts\dev.cmd` or build then `cd dist && python -m http.server 8085` |
+
+Makefile targets (when `make` is available): `build`, `clean`, `dev`, `help`.
 
 ## Testing Changes
 
 ```bash
+# Linux/macOS
 make dev
+# Windows (from repo root)
+python scripts\build.py && cd dist && python -m http.server 8085
 # Open http://localhost:8085 in browser
 ```
 
 ## Constraints
 
 - Output must be a single HTML file
-- No external runtime dependencies
-- No build tools beyond bash + coreutils
+- No external runtime dependencies beyond Python 3 (stdlib only)
 - Keep JS under 200 lines
 - Keep CSS under 400 lines
