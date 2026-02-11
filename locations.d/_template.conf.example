@@ -1,0 +1,13 @@
+# Copy this file, rename to <site-name>.conf, and fill in values.
+# Regex capture $1 maps the request path directly to the upstream —
+# no prefix-based path appending, no double-pathing.
+#
+# location ~ ^/g/<name>(/.*)$ {
+#     proxy_pass https://<domain>$1;
+#     proxy_set_header Host <domain>;
+#     proxy_set_header Referer https://<domain>$1;
+#     proxy_set_header Origin https://<domain>;
+#
+#     include /etc/nginx/proxy-common.conf;
+#     sub_filter 'https://<domain>' '/g/<name>';
+# }

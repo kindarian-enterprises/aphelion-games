@@ -30,6 +30,8 @@
     modalTitle: $('#modal-title'),
     modalClose: $('#modal-close'),
     frame: $('#frame'),
+    modalExternal: $('#modal-external'),
+    modalExternalLink: $('#modal-external-link'),
     toast: $('#toast'),
     statTotal: $('#stat-total'),
     statFav: $('#stat-fav'),
@@ -116,7 +118,15 @@
     if (!game) return;
 
     el.modalTitle.textContent = game.title;
-    el.frame.src = game.url;
+    if (game.proxy) {
+      el.frame.style.display = '';
+      el.modalExternal.style.display = 'none';
+      el.frame.src = '/g/' + game.id + new URL(game.url).pathname;
+    } else {
+      el.frame.style.display = 'none';
+      el.modalExternal.style.display = '';
+      el.modalExternalLink.href = game.url;
+    }
     el.modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
@@ -129,6 +139,8 @@
   function closeModal() {
     el.modal.classList.remove('open');
     el.frame.src = '';
+    el.frame.style.display = '';
+    el.modalExternal.style.display = 'none';
     document.body.style.overflow = '';
   }
 
