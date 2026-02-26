@@ -17,6 +17,7 @@
     {"id": "buckshotroullete", "title": "Buckshot Roullete", "category": "strategy", "url": "https://www.gamesflare.org/games/indie/2025-2/buckshot-roulette/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co85h5.jpg", "proxy": true},
     {"id": "tetris", "title": "Tetris", "category": "puzzle", "url": "https://ytiurin.github.io/tetris/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4hxx.jpg", "proxy": true},
     {"id": "wordle", "title": "Wordle", "category": "puzzle", "url": "https://www.nytimes.com/games/wordle/index.html", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/coarm8.jpg"},
-    {"id": "wordleunlimited", "title": "Wordle Unlimited", "category": "puzzle", "url": "https://wordleunlimited.org/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8xll.jpg", "proxy": true}
+    {"id": "wordleunlimited", "title": "Wordle Unlimited", "category": "puzzle", "url": "https://wordleunlimited.org/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8xll.jpg", "proxy": true},
+    {"id": "flappybird", "title": "Flappy Bird", "category": "arcade", "url": "https://flappybird.io/", "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9nda.webp", "proxy": true}
   ]
 }
