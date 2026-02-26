@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: chronicleglados/aphelion
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build static site
+        run: make build
+
+      - name: Build container
+        run: make docker-build
+
+      - name: Smoke test
+        run: |
+          docker run -d --name aphelion-test -p 8080:8080 ${{ env.IMAGE_NAME }}:latest
+          sleep 2
+          STATUS=$(curl -o /dev/null -s -w "%{http_code}" http://localhost:8080)
+          docker logs aphelion-test
+          docker stop aphelion-test
+          if [ "$STATUS" != "200" ]; then
+            echo "Smoke test failed: expected 200, got $STATUS"
+            exit 1
+          fi
+          echo "Smoke test passed (HTTP $STATUS)"
+
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build static site
+        run: make build
+
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Build and push
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:latest -t ${{ env.IMAGE_NAME }}:${{ github.sha }} .
+          docker push ${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
