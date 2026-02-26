@@ -17,7 +17,7 @@ aphelion/
 │   └── games.json               # Game catalog + categories
 ├── locations.d/                  # One .conf per proxied game site
 │   ├── _template.conf.example   # Copy to add a new backend
-│   ├── buckshotroullete.conf
+│   ├── buckshotroulette.conf
 │   ├── tetris.conf
 │   └── wordleunlimited.conf
 ├── src/

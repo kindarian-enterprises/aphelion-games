@@ -79,7 +79,7 @@ location ~ ^/g/<name>(/.*)$ {
 - `sub_filter` rewrites the upstream domain to `/g/<name>` so absolute URLs route back through the proxy
 - `resolver 8.8.8.8` in nginx.conf is required because regex captures in proxy_pass need runtime DNS
 
-**Naming convention:** filename = game id from games.json, e.g. `tetris.conf`, `buckshotroullete.conf`.
+**Naming convention:** filename = game id from games.json, e.g. `tetris.conf`, `buckshotroulette.conf`.
 
 ### Remove a proxy route
 
@@ -180,7 +180,7 @@ When adding a new game, decide whether it should be proxied:
 
 | Proxy? | When to use | Example |
 |--------|-------------|---------|
-| **Yes** (`"proxy": true`) | Simple static game sites, GitHub Pages games, indie game hosts | Tetris, Buckshot Roullete, Wordle Unlimited |
+| **Yes** (`"proxy": true`) | Simple static game sites, GitHub Pages games, indie game hosts | Tetris, Buckshot Roulette, Wordle Unlimited |
 | **No** (omit flag) | Complex apps with many subdomains/APIs, strict CORS, or heavy JS that breaks under `sub_filter` rewriting | NYT Wordle, any site requiring login |
 
 **Signs a site can't be proxied:**
