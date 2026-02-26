@@ -1,10 +1,10 @@
 # APHELION Gaming Hub — Linux/macOS (make) and Windows (see scripts/build.cmd)
 # Single engine: scripts/build.py (reused by build.sh, build.cmd, and this Makefile)
 
-IMAGE_NAME ?= aphelion
+IMAGE_NAME ?= chronicleglados/aphelion
 IMAGE_TAG  ?= latest
 
-.PHONY: build clean dev docker-build docker-run docker-stop help
+.PHONY: build clean dev docker-build docker-run docker-stop docker-test docker-publish help
 
 all: build
 
@@ -29,6 +29,12 @@ docker-run: docker-build
 docker-stop:
 	@docker ps -q --filter ancestor=$(IMAGE_NAME):$(IMAGE_TAG) | xargs -r docker stop
 
+docker-test:
+	@bash scripts/ci-local.sh
+
+docker-publish:
+	@bash scripts/ci-local.sh --push
+
 help:
 	@echo "APHELION Build System (cross-platform engine: scripts/build.py)"
 	@echo ""
@@ -38,6 +44,8 @@ help:
 	@echo "  make docker-build  Build container image"
 	@echo "  make docker-run    Build and run container on :8080"
 	@echo "  make docker-stop   Stop running container"
+	@echo "  make docker-test   Build, run, and smoke-test container"
+	@echo "  make docker-publish  Test and push to DockerHub"
 	@echo "  make help          Show this message"
 	@echo ""
 	@echo "Windows (no make): scripts\\build.cmd   scripts\\dev.cmd (build+serve)"
