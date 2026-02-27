@@ -4,7 +4,7 @@
 IMAGE_NAME ?= chronicleglados/aphelion
 IMAGE_TAG  ?= latest
 
-.PHONY: build clean dev docker-build docker-run docker-stop docker-test docker-publish help
+.PHONY: build clean dev docker-build docker-run docker-stop docker-test docker-publish deploy deploy-setup help
 
 all: build
 
@@ -35,6 +35,12 @@ docker-test:
 docker-publish:
 	@bash scripts/ci-local.sh --push
 
+deploy:
+	@bash scripts/deploy-cloudrun.sh
+
+deploy-setup:
+	@bash scripts/setup-gcp-deploy.sh
+
 help:
 	@echo "APHELION Build System (cross-platform engine: scripts/build.py)"
 	@echo ""
@@ -46,6 +52,8 @@ help:
 	@echo "  make docker-stop   Stop running container"
 	@echo "  make docker-test   Build, run, and smoke-test container"
 	@echo "  make docker-publish  Test and push to DockerHub"
+	@echo "  make deploy        Deploy to Cloud Run (main only)"
+	@echo "  make deploy-setup  Provision GCP SA and configure GitHub secrets"
 	@echo "  make help          Show this message"
 	@echo ""
 	@echo "Windows (no make): scripts\\build.cmd   scripts\\dev.cmd (build+serve)"
